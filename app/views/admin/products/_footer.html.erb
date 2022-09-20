@@ -1,0 +1,7 @@
+<footer>
+  <div class="admin-footer">
+    <% if admin_signed_in? %>
+      <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class:"admin-logout" %>
+    <% end %>
+  </div>
+</footer>
