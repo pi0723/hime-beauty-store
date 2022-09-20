@@ -1,0 +1,71 @@
+<%= render "layouts/header" %>
+<main>
+  <div class="index-main">
+    <%= image_tag "index.png", class: "main-image" %>
+    <%= image_tag "bisui.png", class: "bisui" %>
+    <p class="vertical">富士のめぐみで<br>清く美しく</p>
+  </div>
+
+  <div class="index-concept">
+    <h1>Concept</h1>
+    <div class="catchcopy">
+      <h2>「たくさんのお祝い事が訪れますように」</h2>
+      <h3>May Happiness Cometoyou</h3>
+    </div>
+    <p class="concept-text">
+      豊かな大地、清らかな水<br>富士山の恵を存分にうけた日本酒の美容成分に着目し、<br>誰もが美しくなれる化粧品を。<br><br>
+      「高砂」というおめでたい言葉にあやかって、<br>「美」と「幸せ」を結ぶ素敵な縁となるよう思いを込めました。
+    </p>
+  </div>
+
+  <div class="index-collabo">
+    <h1>Collaboration</h1>
+    <div class="collabo-explain">
+      <div class="collabo-image"><%= image_tag "syuzo.png", class: "syuzo" %></div>
+      <div class="collabo-content">
+        <p class="collabo-title">富士高砂酒造</p>
+        <p class="collabo-text">
+          天保元年創業。口当たりが優しく米の旨味が活かされた最高の美酒。
+          それは100年の歳月をかけ、自然の濾過を施された天然水があってこそ。
+          富士山とともに造られてきた日本酒たちは、今や世界中の人々を魅了しています。
+        </P>
+      </div>
+    </div>
+    <div class="collabo-explain">
+      <div class="collabo-image"><%= image_tag "tsg_no6.png", class: "tsg" %></div>
+      <div class="collabo-content">
+        <p class="collabo-title">「TSG No.6」*</p>
+        <p class="collabo-text">
+          100年以上の歴史を持つ熟練の発酵技術を生かし、コメ発酵液のアミノ酸濃度を6倍まで高めた「TSG No.6」を独自開発。
+          全ての化粧品にたっぷりと配合しています。
+        </P>
+        <p class="collabo-add">*保湿成分</p>
+      </div>
+    </div>
+    <div class="catchcopy-back">
+      <h2>お米に宿る、美のちから</h2>
+      <p class="concept-text">
+      お米を発酵させ抽出した「コメ発酵液」は<br>天然のアミノ酸を豊富に含んだ保湿成分。<br>角層の奥深くまで浸透し、保湿力やバリア機能を保つ<br>
+      美肌に欠かせない守り神です。<br><br>コメ発酵液のアミノ酸濃度を<br>6倍まで高めた「TSG No.6」を独自開発し<br>全ての化粧品にたっぷりと配合しています。
+     </p>
+    </div>
+  </div>
+
+  <div class="index-products">
+    <h1>Products</h1>
+    <ul class="products-lists">
+      <% @products.each do |product| %>
+      <li class="list">
+        <div class="product-image">
+          <%= link_to image_tag(product.image, class:"image"), "#" %>
+        </div>
+        <div class="product-info">
+          <p class="product-name"><%= product.name %></p>
+          <p class="product-price"><%= product.price %>円</p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</main>
+<%= render "layouts/footer" %>

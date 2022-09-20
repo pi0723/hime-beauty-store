@@ -1,0 +1,160 @@
+main {
+  padding: 60px 0;
+}
+
+/*  トップ画像  */
+
+.index-main {
+  position: relative;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.main-image {
+  width: 100%;
+}
+
+.bisui {
+  position: absolute;
+  width: 23%;
+  bottom: 3vh;
+  left:10vw;
+}
+
+.vertical {
+  position: absolute;
+  writing-mode: vertical-rl;
+  right: 10vw;
+  top: 10vh;
+  font-size: 2.8rem;
+  line-height: 4.8rem;
+  letter-spacing: 1.6rem;
+}
+
+/*  コンセプト  */
+
+.index-concept {
+  margin-bottom: 150px;
+  width: 100%;
+}
+
+.catchcopy {
+  margin-bottom: 50px;
+}
+
+.catchcopy h2 {
+  position: relative;
+  z-index:  1;
+}
+
+.catchcopy h3 {
+  transform: rotate(-5deg);
+}
+
+.concept-text {
+  text-align: center;
+  line-height: 4rem;
+}
+
+/*  富士高砂紹介  */
+
+.index-collabo {
+  margin-bottom: 150px;
+  width: 100%;
+}
+
+.collabo-explain {
+  display: flex;
+  align-items: center;
+  padding: 0 110px;
+}
+
+.collabo-image {
+  width: 50vw;
+  margin-right: 50px;
+}
+
+.collabo-image img {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.collabo-content {
+  width: 50vw;
+}
+
+.collabo-title {
+  font-size: 3.2rem;
+  padding-bottom: 10px;
+}
+
+.collabo-text {
+  line-height: 4rem;
+  letter-spacing: 0.1rem;
+  padding: 10px 0;
+}
+
+.collabo-add {
+  font-size: 0.8rem;
+  padding-bottom: 10px;
+}
+
+.catchcopy-back {
+  background-color: #DCE4E8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+  height: 450px;
+  margin-top: 10px;
+}
+
+.catchcopy-back h2 {
+  padding-bottom: 30px;
+}
+
+/*  商品一覧  */
+
+.index-products {
+  margin-bottom: 150px;
+  width: 100vw;
+}
+
+.products-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 5vw;
+}
+
+.list {
+  width: 27vw;
+  padding-bottom: 5vh;
+}
+
+.products-lists::after {
+  content: "";
+  display:block;
+  width:27vw;
+}
+
+.product-image {
+  width: 27vw;
+  height: 27vw;
+  margin-bottom: 10px;
+}
+
+.image {
+  width: 100%;
+}
+
+.product-info {
+  width: 27vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.product-name {
+  font-size: 2rem;
+}
