@@ -1,0 +1,15 @@
+.admin-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 40px;
+  background-color: #999999;
+  padding: 0 5vw;
+  text-align: right;
+}
+
+
+.admin-logout {
+  color: #ffffff;
+  line-height: 40px;
+}

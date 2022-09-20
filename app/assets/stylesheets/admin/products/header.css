@@ -1,0 +1,17 @@
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 80px;
+  background-color: #999999;
+  padding: 0 5vw;
+}
+
+.admin-logo, .admin-link {
+  color: #999999;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-size: 2rem;
+  padding: 2vh 2vw;
+}

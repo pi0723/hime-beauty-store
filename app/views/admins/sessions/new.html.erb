@@ -1,0 +1,25 @@
+<%= render partial: "admin/products/header" %>
+<main>
+<div class="form-wrap">
+    <h2>管理者用ログインページ</h2>
+    <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
+    <div class="form-colmn">
+      <div class="forms">
+        <div class="form">
+          <%= f.label :email, 'E-mail' %>
+          <%= f.email_field :email, class: "item-string" %>
+        </div>
+        <div class="form">
+          <%= f.label :password, 'Password' %>
+          <%= f.password_field :password, class: "item-string" %>
+        </div>
+        <div class="submit">
+          <%= f.submit "Log in", class:"submit-btn" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</main>
+<%= render partial: "admin/products/footer" %>

@@ -1,2 +1,50 @@
-<h1>Admin::Products#edit</h1>
-<p>Find me in app/views/admin/products/edit.html.erb</p>
+<%= render 'header' %>
+<main>
+  <div class="form-wrap">
+    <h2>商品の登録</h2>
+    <%= form_with model: [:admin, @product], local: true do |f| %>
+    <div class="form-colmn">
+      <div class="forms">
+        <div class="form">
+          <%= f.label :name, '商品名' %>
+          <%= f.text_field :name, class: "item-string" %>
+        </div>
+        <div class="form">
+          <%= f.label :title, 'キャッチコピー' %>
+          <%= f.text_field :title, class: "item-string" %>
+        </div>
+        <div class="form-half">
+          <div class="form">
+            <%= f.label :price, '価格' %>
+            <%= f.text_field :price, class: "item-string half" %>
+          </div>
+          <div class="form">
+            <%= f.label :volume, '内容量' %>
+            <%= f.text_field :volume, class: "item-string half" %>
+          </div>
+        </div>
+        <div class="form">
+          <%= f.label :explanation, '商品説明' %>
+          <%= f.text_area  :explanation, class: "item-text" %>
+        </div>
+        <div class="form">
+          <%= f.label :ingredient, '成分' %>
+          <%= f.text_area  :ingredient, class: "item-text" %>
+        </div>
+        <div class="form">
+          <%= f.label :made_in_id, '原産国' %>
+          <%= f.collection_select(:made_in_id, MadeIn.all, :id, :name, {}, {class: "item-select"}) %>
+        </div>
+        <div class="form">
+          <%= f.label :image, "商品画像アップロード", class:"image-btn" %>
+          <%= f.file_field :image, class: "item-image" %>
+        </div>
+        <div class="submit">
+          <%= f.submit "登録する", class:"submit-btn" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</main>
+<%= render 'footer' %>

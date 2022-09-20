@@ -1,0 +1,8 @@
+<header>
+  <div class="admin-header">
+    <% if admin_signed_in? %>
+      <%= link_to '管理者用メニューTOP', admin_products_path, class:"admin-logo" %>
+      <%= link_to 'ページを確認する', products_path, class:"admin-link", target: "_blank" %>
+    <% end %>
+  </div>
+</header>
