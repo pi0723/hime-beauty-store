@@ -1,0 +1,33 @@
+<%= render "layouts/header" %>
+<main>
+  <div class="show-wrap">
+    <div class="show-colmn">
+      <div class="show-top">
+        <div class="show-image">
+          <%= image_tag @product.image %>
+        </div>
+        <div class="show-info">
+          <h3>Product Details</h3>
+          <p class="show-name"><%= @product.name %></p>
+          <div class="show-flex">
+            <p class="show-volume"><%= @product.volume %></p>
+            <p class="show-price"><%= @product.price %>円</p>
+          </div>
+          <p class="show-ingredient"><%= @product.ingredient %></p>
+          <div class="show-cart">
+            <div class="show-form">
+            <%= form_with model:@cart_items, local: true do |f| %>
+              数量：<%= f.text_field :quantity, class:"show-quantity" %>
+              <%= f.submit 'カートへ入れる', class:"show-submit" %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2><%= @product.title %></h2>
+      <p class="show-explanation"><%= safe_join(@product.explanation.split("\n"),tag(:br)) %></p>
+      <p class="show-made-in">MADE IN <%= @product.made_in.name %></p>
+    </div>
+  </div>
+</main>
+<%= render "layouts/footer" %>
