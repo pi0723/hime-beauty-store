@@ -1,0 +1,76 @@
+.show-wrap {
+  width: 100vw;
+  margin: 25vh 0;
+  display: flex;
+  justify-content: center;
+}
+
+.show-colmn {
+  width: 80vw;
+}
+
+.show-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+
+.show-image img {
+  width: 30vw;
+}
+
+.show-info {
+  width: 40vw;
+}
+
+.show-info h3 {
+  padding: 0 0 3vh;
+}
+
+.show-name {
+  font-size: 2rem;
+  padding: 1vh 0;
+}
+
+.show-flex {
+  display: flex;
+  padding: 1vh 0;
+}
+
+.show-price {
+  margin-left: 1vw;
+}
+
+.show-ingredient {
+  line-height: 2.4rem;
+}
+
+.show-form {
+  margin-top: 5vh;
+  text-align: right;
+  line-height: 50px;
+}
+
+.show-quantity {
+  width: 5vw;
+  height:45px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  padding: 1vh 1vw;
+}
+
+.show-submit {
+  width: 15vw;
+  height: 50px;
+  background-color: #bc9462;
+  border: 1px solid #bc9462;
+  border-radius: 30px;
+  color: #ffffff;
+  margin-left: 1vw;
+  text-align: center;
+}
+
+.show-explanation {
+  padding: 5vh 0;
+}
