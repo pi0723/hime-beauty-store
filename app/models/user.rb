@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+  has_many   :carts
 
   with_options presence: true do
     validates :last_name
