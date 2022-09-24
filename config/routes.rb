@@ -9,4 +9,13 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  resources :carts, only: [:show] do
+    collection do
+      post :add
+    end
+    member do
+      resources :cart_items, only: %i[update destroy]
+    end
+  end
+
 end
