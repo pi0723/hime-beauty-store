@@ -1,0 +1,28 @@
+<%= render "layouts/header" %>
+<main>
+  <div class="f-wrap">
+    <div class="f-wraprap">
+      <div class="f-title">
+        <h3>Welcome!</h3>
+        <h2>Log in<h2>
+      </div>
+      <div class="f-main">
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <div class="fm">
+          <%= f.email_field :email, placeholder:"E-mail", class: "form-string" %>
+        </div>
+        <div class="fm">
+          <%= f.password_field :password, placeholder:"Password", class: "form-string" %>
+        </div>
+        <div class="f-submit">
+          <%= f.submit "SIGN IN", class:"form-submit" %>
+        </div>
+      <% end %>
+      </div>
+      <div class='link-new'>
+        <%= link_to '▷ 新規登録はこちら', new_user_registration_path %>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render "layouts/footer" %>
