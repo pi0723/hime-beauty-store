@@ -14,7 +14,6 @@ class User < ApplicationRecord
     validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: '半角数字でハイフン(-)を入れて入力してください' }
     validates :city
     validates :address, format: { with: /\A[0-9]+\z/, message: '半角数字で入力してください' }
-    validates :building
     validates :phone, format: { with: /\A\d{10,11}\z/, message: '半角数字で入力してください(ハイフンなし)' }
   end
 

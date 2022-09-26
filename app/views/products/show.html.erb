@@ -16,8 +16,9 @@
           <p class="show-ingredient"><%= @product.ingredient %></p>
           <div class="show-cart">
             <div class="show-form">
-            <%= form_with model:@cart_items, local: true do |f| %>
+            <%= form_with model: CartItem.new, url: add_carts_path, local: true do |f| %>
               数量：<%= f.text_field :quantity, class:"show-quantity" %>
+              <%= f.hidden_field :product_id, value: @product.id %>
               <%= f.submit 'カートへ入れる', class:"show-submit" %>
             <% end %>
             </div>

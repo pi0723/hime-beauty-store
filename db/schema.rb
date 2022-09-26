@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2022_09_24_041229) do
     t.string "post_code", null: false
     t.string "city", null: false
     t.string "address", null: false
-    t.string "building", null: false
+    t.string "building"
     t.string "phone", null: false
     t.integer "prefecture_id", null: false
     t.string "reset_password_token"

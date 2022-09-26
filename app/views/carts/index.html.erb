@@ -1,0 +1,12 @@
+<% @cart.cart_items.each do |item| %>
+<%= item.product.name %>
+<%= item.quantity %>
+<%= form_with model: item, local: true do |f| %>
+<%= f.text_field :quantity %>
+<%= f.submit %>
+<% end %>
+<%= form_with model: item, method: :delete, local: true do |f| %>
+<%= f.submit %>
+
+<% end %>
+<% end %>
