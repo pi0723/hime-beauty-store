@@ -7,17 +7,17 @@ class CartItemsController < ApplicationController
 
   def destroy
     get_item.destroy
-    redirect_to carts_path, notice: '商品を削除しました'
+    redirect_to carts_path
   end
 
   private
 
   def get_item
-    Item.find(params[:id])
+    CartItem.find(params[:id])
   end
 
   def update_params
-    params.require(:item).permit(:quantity)
+    params.require(:cart_item).permit(:quantity)
   end
 
 end

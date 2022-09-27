@@ -26,8 +26,12 @@ body {
   color: #4d4d4d;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
+main {
+  flex: 1;
+}
 
 h1 {
   font-family: baskerville-poster-pt, serif;
@@ -39,6 +43,8 @@ h1 {
   margin-bottom: 50px;
   letter-spacing: 0.1em;
 }
+
+
 
 h2 {
   font-family: ten-mincho-text,serif;
