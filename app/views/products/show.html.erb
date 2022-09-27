@@ -25,9 +25,11 @@
           </div>
         </div>
       </div>
-      <h2><%= @product.title %></h2>
-      <p class="show-explanation"><%= safe_join(@product.explanation.split("\n"),tag(:br)) %></p>
-      <p class="show-made-in">MADE IN <%= @product.made_in.name %></p>
+      <div class="show-bottom">
+        <h2><%= @product.title %></h2>
+        <p class="show-explanation"><%= safe_join(@product.explanation.split("\n"),tag(:br)) %></p>
+        <p class="show-made-in">MADE IN <%= @product.made_in.name %></p>
+      </div>
     </div>
   </div>
 </main>

@@ -71,6 +71,11 @@
   text-align: center;
 }
 
+.show-bottom {
+  padding: 0 10vw;
+}
+
 .show-explanation {
-  padding: 5vh 0;
+  padding: 8vh 0;
+  line-height: 3rem;
 }
