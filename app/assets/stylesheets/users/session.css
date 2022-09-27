@@ -1,0 +1,129 @@
+.f-wrap {
+  width: 100vw;
+  margin: 25vh 0 20vh;
+  display: flex;
+  justify-content: center;
+}
+
+.f-wraprap {
+  width: 40vw;
+}
+
+.f-title {
+  margin-bottom: 8vh;
+}
+
+.f-title h3 {
+  transform: rotate(-10deg);
+}
+
+.f-title h2 {
+  letter-spacing: 1.2rem;
+}
+
+.form-string {
+  width: 100%;
+  height: 35px;
+  padding: 1vh 1vh;
+  border-bottom: 1px solid #999999;
+  margin-bottom: 3vh;
+}
+
+.form-string:focus {
+  outline: none;
+  background-color: antiquewhite;
+}
+
+.f-submit {
+  text-align: center;
+}
+
+.form-submit {
+  width: 20vw;
+  padding: 2vh 2vw;
+  color: #bc9462;
+  border: 1px solid #bc9462;
+  margin: 2vh 0 5vh;
+  letter-spacing: 3px;
+}
+
+.link-new {
+  font-size: 1.2rem;
+  color: #999999;
+  text-align: center;
+}
+
+::placeholder {
+  color: #c9caca;
+  font-size: 1.5rem;
+}
+
+/* 新規登録専用 */
+
+.f-n {
+  margin-bottom: 5vh;
+}
+
+/*.select-box {
+  width: 50%;
+  height: 45px;
+  border: 1px solid #999999;
+  padding: 1vh 1vw;
+  margin-bottom: 3vh;
+}*/
+
+.form-select {
+	overflow: hidden;
+	width: 50%;
+  margin-bottom: 3vh;
+}
+
+.form-select select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.form-select select::-ms-expand {
+    display: none;
+}
+.form-select.form-sl {
+	position: relative;
+	border-radius: 2px;
+	border: 1px solid #999999;
+	background: #ffffff;
+}
+.form-select.form-sl::before {
+	position: absolute;
+	top: 1.2em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #999999;
+	pointer-events: none;
+}
+.form-select.form-sl select {
+	padding: 2vh 2vw;
+	color: #999999;
+}
+
+.fm1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.s1 {
+  width: 90%;
+}

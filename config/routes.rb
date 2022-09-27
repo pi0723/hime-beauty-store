@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions:      'users/sessions'
+  }
+
   devise_for :admins
   root to: 'products#index'
   resources :products, only: [:index, :show]
@@ -9,12 +14,12 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  resources :carts, only: [:show] do
+  resources :carts, only: [:index] do
     collection do
       post :add
     end
     member do
-      resources :cart_items, only: %i[update destroy]
+      resources :cart_items, only: [:update, :destroy]
     end
   end
 

@@ -1,0 +1,48 @@
+<%= render "layouts/header" %>
+
+<main>
+  
+  <div class="cart-wrap">
+    <div class="cart-title">
+      <h3>Cart Items</h3>
+      <h2>ショッピングカート</h2>
+      <% if notice.present? %>
+       <p class="notice"><%= notice %></p>
+       <% end %>
+    </div>
+    <ul>
+    <% if @cart.cart_items.present? %>
+      <% @cart.cart_items.each do |cart_item| %>
+      <li class="cart-items">
+        <div class="cart-image">
+          <%= image_tag cart_item.product.image %>
+        </div>
+        <div class="cart-contents">
+          <div class="cart-top">
+            <p class="cart-name"><%= cart_item.product.name %></p>
+            <p class="cart-price"><%= cart_item.product.price %>円</p>
+          </div>
+          <div class="cart-forms">
+            <div class="cart-edit">
+              <%= form_with model: cart_item, local: true do |f| %>
+                <%= f.text_field :quantity, class:"cart-quantity" %>
+                <%= f.submit '更新', class:"cart-update" %>
+              <% end %>
+            </div>
+            <div class="cart-destroy">
+              <%= form_with model: cart_item, method: :delete, local: true do |f| %>
+                <%= f.submit '>> 削除する', class:"cart-delete" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    <% else %>
+      <li class="cart-non">カートの中には何も入っていません。</li>
+    <% end %>
+    </ul>
+  </div>
+</main>
+
+<%= render "layouts/footer" %>

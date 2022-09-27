@@ -1,0 +1,10 @@
+.error-alert {
+  background-color: #ffe4e4;
+  padding: 2vh 2vw;
+  margin-bottom: 3vh;
+}
+
+.error-message {
+  color: #c30d23;
+  font-size: 1.2rem;
+}

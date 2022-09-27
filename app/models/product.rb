@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :made_in
+  belongs_to       :made_in
   has_one_attached :image
+  has_many         :cart_items
 
   with_options presence: true do
     validates :name
