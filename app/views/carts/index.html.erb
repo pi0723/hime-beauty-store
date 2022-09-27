@@ -7,8 +7,8 @@
       <h3>Cart Items</h3>
       <h2>ショッピングカート</h2>
       <% if notice.present? %>
-       <p class="notice"><%= notice %></p>
-       <% end %>
+       <p id="notice"><%= notice %></p>
+      <% end %>
     </div>
     <ul>
     <% if @cart.cart_items.present? %>
