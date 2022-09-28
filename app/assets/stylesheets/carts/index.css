@@ -92,6 +92,16 @@
   color: #c9caca;
 }
 
+.total-price {
+  margin-top: 5vh;
+}
+
+.strong {
+  font-size: 3rem;
+  font-weight: 200;
+  padding: 0 1vw;
+}
+
 .cart-non {
   margin-top: 3vh;
   font-size: 1.8rem;

@@ -14,6 +14,7 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 10vh;
+  padding: 0 5vw;
 }
 
 .show-image img {
@@ -21,11 +22,18 @@
 }
 
 .show-info {
-  width: 40vw;
+  width: 32vw;
 }
 
 .show-info h3 {
   padding: 0 0 3vh;
+}
+
+.show-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 3vh;
 }
 
 .show-name {

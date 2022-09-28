@@ -3,6 +3,6 @@ window.addEventListener('load', function(){
       const noticeMessage = document.getElementById("notice")
       setTimeout (function(){
         noticeMessage.classList.add("fadeout");
-      }, 3000);
+      }, 1000);
   };
 });

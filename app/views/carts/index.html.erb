@@ -20,7 +20,7 @@
         <div class="cart-contents">
           <div class="cart-top">
             <p class="cart-name"><%= cart_item.product.name %></p>
-            <p class="cart-price"><%= cart_item.product.price %>円</p>
+            <p class="cart-price"><%= cart_item.product.price.to_s(:delimited) %>円</p>
           </div>
           <div class="cart-forms">
             <div class="cart-edit">
@@ -42,6 +42,12 @@
       <li class="cart-non">カートの中には何も入っていません。</li>
     <% end %>
     </ul>
+    <% @cart_items.each do |cart_item| %>
+      <% @total += cart_item.sum_of_price %>
+    <% end %>
+    <p class="total-price">
+      合計</span><span class="strong"><%= @total.to_s(:delimited) %></span>円
+    </p>
   </div>
 </main>
 
