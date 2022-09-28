@@ -1,0 +1,59 @@
+<%= render "layouts/header" %>
+<main>
+  <div class="f-wrap">
+    <div class="f-wraprap">
+      <div class="f-title">
+        <h3>Welcome!</h3>
+        <h2>新規会員登録<h2>
+      </div>
+      <div class="f-n">
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <%= render 'layouts/error', model: f.object %>
+        <div class="f-n">
+          <div class="fm">
+            <%= f.email_field :email, placeholder:"E-mail", class: "form-string" %>
+          </div>
+          <div class="fm">
+            <%= f.password_field :password, placeholder:"Password", class: "form-string" %>
+          </div>
+          <div class="fm">
+            <%= f.password_field :password_confirmation, placeholder:"(確認用) Password", class: "form-string" %>
+          </div>
+        </div>
+        <div class="f-n">
+          <div class="fm fm1">
+            <%= f.text_field :last_name, placeholder:"名字", class: "form-string s1" %>
+            <%= f.text_field :first_name, placeholder:"名前", class: "form-string s1" %>
+          </div>
+        </div>
+        <div class="f-n">
+          <div class="fm">
+            <%= f.text_field :post_code, placeholder:"郵便番号", class: "form-string" %>
+          </div>
+          <div class="fm">
+            <div class="form-select form-sl">
+              <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box"}) %>
+            </div>
+          </div>
+          <div class="fm">
+            <%= f.text_field :city, placeholder:"市町村", class: "form-string" %>
+          </div>
+          <div class="fm">
+            <%= f.text_field :address, placeholder:"番地", class: "form-string" %>
+          </div>
+          <div class="fm">
+            <%= f.text_field :building, placeholder:"建物名", class: "form-string" %>
+          </div>
+          <div class="fm">
+            <%= f.text_field :phone, placeholder:"電話番号", class: "form-string" %>
+          </div>
+        </div>
+        <div class="f-submit">
+          <%= f.submit "SIGN UP", class:"form-submit" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render "layouts/footer" %>

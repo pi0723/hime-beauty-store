@@ -61,7 +61,7 @@
         </div>
         <div class="product-info">
           <p class="product-name"><%= product.name %></p>
-          <p class="product-price"><%= product.price %>円</p>
+          <p class="product-price"><%= product.price.to_s(:delimited) %>円</p>
         </div>
       </li>
       <% end %>

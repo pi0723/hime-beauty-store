@@ -8,10 +8,12 @@
         </div>
         <div class="show-info">
           <h3>Product Details</h3>
-          <p class="show-name"><%= @product.name %></p>
-          <div class="show-flex">
-            <p class="show-volume"><%= @product.volume %></p>
-            <p class="show-price"><%= @product.price %>円</p>
+          <div class="show-detail">
+            <p class="show-name"><%= @product.name %></p>
+            <div class="show-flex">
+              <p class="show-volume"><%= @product.volume %></p>
+              <p class="show-price"><%= @product.price.to_s(:delimited) %>円(税込)</p>
+            </div>
           </div>
           <p class="show-ingredient"><%= @product.ingredient %></p>
           <div class="show-cart">
