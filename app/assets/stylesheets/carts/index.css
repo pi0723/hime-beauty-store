@@ -102,6 +102,13 @@
   padding: 0 1vw;
 }
 
+.purchase-btn {
+  margin-top: 2vh;
+  padding: 3vh 8vw;
+  color: #bc9462;
+  border: 1px solid #bc9462;
+}
+
 .cart-non {
   margin-top: 3vh;
   font-size: 1.8rem;
