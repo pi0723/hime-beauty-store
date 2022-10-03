@@ -42,14 +42,11 @@
       <li class="cart-non">カートの中には何も入っていません。</li>
     <% end %>
     </ul>
-    <% @cart_items.each do |cart_item| %>
-      <% @total += cart_item.sum_of_price %>
-    <% end %>
     <% if @cart.cart_items.present? %>
     <p class="total-price">
-      合計</span><span class="strong"><%= @total.to_s(:delimited) %></span>円
+      合計<span class="strong"><%= @cart.total_price.to_s(:delimited) %></span>円
     </p>
-    <%= link_to '購入手続き', '#', class: "purchase-btn" %>
+    <%= link_to '購入手続き', new_order_path, class: "purchase-btn" %>
     <% end %>
   </div>
 </main>

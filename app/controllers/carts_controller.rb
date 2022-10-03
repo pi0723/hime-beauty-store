@@ -2,11 +2,6 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_cart
 
-  #def add
-  #  @cart.cart_items.create!(add_params)
-  #  redirect_to carts_path
-  #end
-
   def add
     if @cart.cart_items.find_by(product_id: params[:cart_item][:product_id]).present?
       cart_item = @cart.cart_items.find_by(product_id: params[:cart_item][:product_id])
