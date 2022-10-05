@@ -90,13 +90,10 @@ ActiveRecord::Schema.define(version: 2022_10_01_012118) do
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "destination_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "sold_at", null: false
     t.string "charge_id", null: false
-    t.string "order_code", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["destination_id"], name: "index_orders_on_destination_id"
-    t.index ["order_code"], name: "index_orders_on_order_code", unique: true
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

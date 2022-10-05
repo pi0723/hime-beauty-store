@@ -122,6 +122,11 @@
 .fm1 {
   display: flex;
   justify-content: space-between;
+  align-items:baseline;
+}
+
+.fm p {
+  padding: 0 1vw;
 }
 
 .s1 {
