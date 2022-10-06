@@ -1,7 +1,7 @@
 class Destination < ApplicationRecord
   has_one    :order
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :prefecture_id
+  belongs_to :prefecture
 
   # with_options presence: true do
   #   validates :last_name

@@ -8,9 +8,8 @@ class OrdersController < ApplicationController
   def create
     @destination_order = DestinationOrder.new(destination_params)
     if @destination_order.valid?
+      pay_item
       @destination_order.save
-      # カートからオーダーへ情報を移す
-      assign_from_cart(@cart)
       redirect_to root_path
     else
       render :new
@@ -27,7 +26,21 @@ class OrdersController < ApplicationController
   def destination_params
     params.require(:destination_order)
           .permit(:first_name, :last_name, :post_code, :city, :address, :building, :phone, :prefecture_id)
-          .merge(user_id: current_user.id, charge_id: params[:charge_id])
+          .merge(user_id: current_user.id, token: params[:token])
   end
 
+  def pay_item
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp::Charge.create(
+      amount: total_price,
+      card: destination_params[:token],
+      currency: 'jpy'
+    )
+  end
+
+  def total_price
+    @cart.cart_items.sum do |item|
+      item.quantity * item.product.price
+    end
+  end
 end

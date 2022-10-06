@@ -1,7 +1,6 @@
 class DestinationOrder
   include ActiveModel::Model
-  attr_accessor :last_name, :first_name, :post_code, :city, :address, :building, :phone, :prefecture_id,
-                :user_id, :charge_id
+  attr_accessor :last_name, :first_name, :post_code, :city, :address, :building, :phone, :prefecture_id, :user_id, :token
 
   with_options presence: true do
     validates :last_name
@@ -11,9 +10,10 @@ class DestinationOrder
     validates :address, format: { with: /\A[0-9]+\z/, message: '半角数字で入力してください' }
     validates :phone, format: { with: /\A\d{10,11}\z/, message: '半角数字で入力してください(ハイフンなし)' }
     validates :user_id
-    validates :charge_id
+    # validates :charge_id
     # validates :sold_at
     # validates :order_code
+    validates :token
   end
               
   validates :prefecture_id, numericality: { other_than: 1 }
@@ -31,10 +31,11 @@ class DestinationOrder
 
     Order.create(
       user_id: user_id,
-      charge_id: charge_id,
       destination_id: destination.id
+      # charge_id: charge_id,
       # order_code: SecureRandom.uuid,
       # sold_at: Time.new  
     )
   end
+
 end

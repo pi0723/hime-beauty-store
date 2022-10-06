@@ -74,7 +74,7 @@ extend ActiveHash::Associations::ActiveRecordExtensions
 - belongs_to  :product
 - belongs_to  :cart
 
-
+      t.string     :charge_id,   null: false
       t.datetime   :sold_at,     null: false
       t.string     :order_code,  null: false
       t.index [ :order_code ], unique: true

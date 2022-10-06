@@ -10,15 +10,16 @@ class Order < ApplicationRecord
   #   validates :order_code
   # end
 
-  def assign_from_cart(cart)
-    cart.cart_items.each do |item|
-      order_items << OrderItem.new(
-        product_id: item.product_id,
-        quantity: item.quantity,
-        price_with_tax: item.quantity * item.product.price,
-        price: item.quantity * item.product.price / 1.1
-      )
-    end
-    cart.destroy
-  end
+  # def assign_from_cart(cart)
+  #   cart.cart_items.each do |item|
+  #     order_items << OrderItem.new(
+  #       product_id: item.product_id,
+  #       quantity: item.quantity,
+  #       price_with_tax: item.quantity * item.product.price,
+  #       price: item.quantity * item.product.price / 1.1
+  #     )
+  #   end
+  #   cart.destroy
+  # end
+
 end
