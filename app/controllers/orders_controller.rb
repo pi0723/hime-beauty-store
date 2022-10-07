@@ -10,7 +10,6 @@ class OrdersController < ApplicationController
     if @destination_order.valid?
       pay_item
       @destination_order.save
-      redirect_to root_path
     else
       render :new
     end

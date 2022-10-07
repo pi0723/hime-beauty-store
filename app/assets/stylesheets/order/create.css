@@ -1,0 +1,53 @@
+.after-wrap {
+  width: 100vw;
+  margin: 20vh 0 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.thanks {
+  margin-bottom: 5vh;
+}
+
+.thanks h3 {
+  transform: rotate(-10deg);
+}
+
+.thanks-wrap p {
+  font-size: 2rem;
+}
+
+.after-logo {
+  width: 20vw;
+  height: auto;
+  margin-bottom: 3vh;
+}
+
+.order-code {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+  background-color: antiquewhite;
+  margin-bottom: 5vh;
+}
+
+.order-code {
+  font-size: 2.6rem;
+}
+
+.order-code p {
+  font-size: 2.5rem;
+}
