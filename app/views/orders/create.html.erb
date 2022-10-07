@@ -1,0 +1,21 @@
+<%= render "layouts/header" %>
+
+<main>
+  <div class="after-wrap">
+    <div class="thanks-wrap">
+      <div class="thanks">
+        <h3>Thank you!</h3>
+        <h2>お買い上げありがとうございました。<h2>
+      </div>
+      <%= image_tag "logo2.png", class: "after-logo" %>
+      <p>注文内容がショップに送信されました。</p>
+    </div>
+    <div class="order-code">
+      <h2>お客様の注文番号</h2>
+      <p>No. 123456789</p>
+    </div>
+    <%= link_to 'TOPへ戻る', root_path, class: "purchase-btn" %>
+  </div>
+</main>
+
+<%= render "layouts/footer" %>
