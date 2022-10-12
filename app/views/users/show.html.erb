@@ -43,7 +43,8 @@
     <p class="total-price">
       合計<span class="strong"><%= @cart.total_price.to_s(:delimited) %></span>円
     </p>
-    <%= link_to '購入手続き', new_order_path, class: "purchase-btn" %>
+    <%= link_to 'Top Page', root_path, class: "purchase-btn" %>
+    <%= link_to 'ログアウト', destroy_user_session, class: "purchase-btn" %>
     <% end %>
   </div>
 </main>

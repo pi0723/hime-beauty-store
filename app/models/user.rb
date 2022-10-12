@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :cart
   has_one :destination
+  has_many :likes
 
 
   with_options presence: true do

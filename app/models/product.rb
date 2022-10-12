@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to       :made_in
   has_one_attached :image
   has_many         :cart_items
+  has_many         :likes, dependent: :destroy
   has_one          :order
 
   with_options presence: true do
