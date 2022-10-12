@@ -4,7 +4,11 @@
     <ul class="head-nav">
       <li><%= link_to 'Products', '#', class:"product-nav" %></li>
       <li><%= link_to 'Contact', '#', class:"contact-nav" %></li>
-      <li><%= link_to image_tag("mypage_logo.png", class:"mypage-nav"), new_user_session_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to image_tag("mypage_logo.png", class:"mypage-nav"), user_path(current_user.id) %></li>
+      <% else %>
+        <li><%= link_to image_tag("mypage_logo.png", class:"mypage-nav"), new_user_session_path %></li>
+      <% end %>
       <li><%= link_to image_tag("cart_logo.png", class:"cart-nav"), carts_path %></li>
     </ul>
   </div>
