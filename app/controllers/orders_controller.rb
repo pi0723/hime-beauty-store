@@ -10,6 +10,9 @@ class OrdersController < ApplicationController
     if @destination_order.valid?
       pay_item
       @destination_order.save
+      order = Order.order(updated_at: :desc).limit(1).new
+      order.assign_from_cart(@cart)
+      order.save
     else
       render :new
     end
