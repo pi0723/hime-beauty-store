@@ -32,3 +32,11 @@
   margin-top: 5vh;
   margin-bottom: 2vh;
 }
+
+.like-non {
+  margin-top: 3vh;
+  font-size: 1.8rem;
+  color: #999999;
+  list-style: none;
+  padding-bottom: 5vh;
+}
