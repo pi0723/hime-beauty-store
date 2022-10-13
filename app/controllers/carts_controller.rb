@@ -16,7 +16,6 @@ class CartsController < ApplicationController
 
   def index
     @cart_items = @cart.cart_items
-    @total = 0
   end
 
   private
