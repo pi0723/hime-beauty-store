@@ -9,7 +9,6 @@ require("channels")
 require('jquery')
 require("../notice")
 require("../card")
-require("../like")
 //= require jquery
 //= require rails-ujs
 
