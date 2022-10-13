@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # トップページ/詳細ページ/お気に入り
   root to: 'products#index'
   resources :products, only: [:index, :show] do
-    resources :likes, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
   end
 
   

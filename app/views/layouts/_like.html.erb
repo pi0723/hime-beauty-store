@@ -1,0 +1,9 @@
+<% if product.liked?(current_user) %>
+  <%= link_to product_likes_path(product.id), method: :delete, remote: true do %>
+    <i class="fa-solid fa-heart"></i>
+  <% end %>
+<% else %>
+  <%= link_to product_likes_path(product.id), method: :post, remote: true do %>
+    <i class="fa-regular fa-heart"></i>
+  <% end %>
+<% end %>

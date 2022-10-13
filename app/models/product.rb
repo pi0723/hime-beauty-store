@@ -19,4 +19,8 @@ class Product < ApplicationRecord
 
   validates :made_in_id, numericality: { other_than: 1 }
 
+  def liked?(user)
+    likes.where(user_id: user.id).exists?
+ end
+
 end

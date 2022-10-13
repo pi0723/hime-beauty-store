@@ -9,6 +9,9 @@ require("channels")
 require('jquery')
 require("../notice")
 require("../card")
+require("../like")
+//= require jquery
+//= require rails-ujs
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

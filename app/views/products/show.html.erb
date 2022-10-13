@@ -22,11 +22,11 @@
               数量：<%= f.text_field :quantity, value: 1, class:"show-quantity" %>
               <%= f.hidden_field :product_id, value: @product.id %>
               <%= f.submit 'カートへ入れる', class:"show-submit" %>
-              <div class="like"> 
-                <button class="like-button">
-                  <i class="fa-solid fa-heart"></i>
-                </button>
-              </div>
+              <% if user_signed_in? %>
+                <span id="like_<%= @product.id %>">
+                  <%= render "layouts/like", product: @product %>
+                </span>
+              <% end %>
             <% end %>
             </div>
           </div>
