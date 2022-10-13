@@ -9,7 +9,12 @@
       <% else %>
         <li><%= link_to image_tag("mypage_logo.png", class:"mypage-nav"), new_user_session_path %></li>
       <% end %>
-      <li><%= link_to image_tag("cart_logo.png", class:"cart-nav"), carts_path %></li>
+      <li>
+        <%= link_to image_tag("cart_logo.png", class:"cart-nav"), carts_path %>
+        <%# if Cart.find_by(user_id: current_user.id).present? %>
+          <!--<span class="circle"><i class="fa-solid fa-heart"></i></span>-->
+        <%# end %>
+      </li>
     </ul>
   </div>
 </header>
