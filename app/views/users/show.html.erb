@@ -6,46 +6,32 @@
     <div class="cart-title">
       <h3>My Page</h3>
       <h2>マイページ</h2>
-    </div>
+    </div> 
+      <p class="like-title">お気に入り商品</p>
     <ul>
-    <% if @cart.cart_items.present? %>
-      <% @cart.cart_items.each do |cart_item| %>
+      <% @like_products.each do |product| %>
       <li class="cart-items">
         <div class="cart-image">
-          <%= image_tag cart_item.product.image %>
+          <%= image_tag product.image %>
         </div>
         <div class="cart-contents">
           <div class="cart-top">
-            <p class="cart-name"><%= cart_item.product.name %></p>
-            <p class="cart-price"><%= cart_item.product.price.to_s(:delimited) %>円</p>
+            <p class="cart-name"><%= product.name %></p>
+            <p class="cart-price"><%= product.price.to_s(:delimited) %>円</p>
           </div>
-          <div class="cart-forms">
-            <div class="cart-edit">
-              <%= form_with model: cart_item, local: true do |f| %>
-                <%= f.text_field :quantity, class:"cart-quantity" %>
-                <%= f.submit '更新', class:"cart-update" %>
-              <% end %>
-            </div>
-            <div class="cart-destroy">
-              <%= form_with model: cart_item, method: :delete, local: true do |f| %>
-                <%= f.submit '>> 削除する', class:"cart-delete" %>
-              <% end %>
-            </div>
+          <%= form_with model: CartItem.new, url: add_carts_path, local: true do |f| %>
+          <div class="like-form">
+            <div>数量：<%= f.text_field :quantity, value: 1, class:"like-quantity" %></div>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <div><%= f.submit 'カートへ入れる', class:"like-submit" %></div>
           </div>
+          <% end %>
         </div>
       </li>
-      <% end %>
-    <% else %>
-      <li class="cart-non">カートの中には何も入っていません。</li>
     <% end %>
     </ul>
-    <% if @cart.cart_items.present? %>
-    <p class="total-price">
-      合計<span class="strong"><%= @cart.total_price.to_s(:delimited) %></span>円
-    </p>
-    <%= link_to 'Top Page', root_path, class: "purchase-btn" %>
-    <%= link_to 'ログアウト', destroy_user_session, class: "purchase-btn" %>
-    <% end %>
+    <%= link_to 'Top Page', root_path, class: "purchase-btn like-btn" %>
+    <%= link_to '>> ログアウト', destroy_user_session_path, method: :delete, class: "link-new like-btn2" %>
   </div>
 </main>
 

@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
 def show
-  @likes = @user.likes
+  likes = Like.where(user_id: @user.id).pluck(:product_id)
+  @like_products = Product.find(likes)
 end
 
 private
